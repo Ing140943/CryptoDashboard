@@ -1,16 +1,13 @@
 {
   "name": "cryptodashboard",
   "version": "0.1.0",
-  "dexcription": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build"
   },
-  "keywords": [],
-  "author": "Setthanat Kladee",
   "dependencies": {
     "bootstrap": "^4.5.2",
     "coingecko-api": "^1.0.10",
@@ -19,6 +16,7 @@
     "react-dom": "16.13.1"
   },
   "engines":{
-    "node": "12.x"
+    "node": "16.13.1",
+    "npm": "8.3.0"
   }
 }
