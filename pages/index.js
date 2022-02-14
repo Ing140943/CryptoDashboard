@@ -20,17 +20,6 @@ function unhilight(e){
 }
 
 export default function Home(props) {
-  const Table = () => {
-
-    // .....
-
-    const itemsPerPage = 10;
-    const [page, setPage] = useState(1);
-    const displayData = useMemo(() => {
-        const start = (page - 1) * itemsPerPage;
-        return data.slice(start, start + itemsPerPage);
-    }, [data]);
-  };
 
   const { data } = props.result
   console.log(data)
@@ -55,7 +44,6 @@ export default function Home(props) {
         <link rel="stylesheet" href="styles/style.css"/>
       </Head>
       <h1>Crypto Dashboard</h1>
-      <button onClick={() => setPage(page + 1)}> Next Page</button>
       <table className='table'>
         <thead>
           <tr>
