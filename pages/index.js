@@ -3,6 +3,17 @@ import styles from '../styles/Home.module.css'
 import CoinGecko from 'coingecko-api'
 const coinGeckoClient = new CoinGecko();
 
+function hilight(e){
+  e.target.style.background = "lightgrey"
+}
+function hilight2(e){
+  e.target.style.background = "honeydew"
+}
+
+function unhilight(e){
+  e.target.style.background = "white"
+}
+
 export default function Home(props) {
   const { data } = props.result
 
@@ -37,20 +48,20 @@ export default function Home(props) {
         </thead>
         <tbody>
           {data.map(coin => (
-            <tr key={coin.id}>
-              <td>
+            <tr key={coin.id} >
+              <td onMouseOver={hilight} onMouseOut={unhilight}>
                 <img 
                 src={coin.image}
                 style={{width: 25, height: 25, marginRight:10}}/>
                 {coin.symbol.toUpperCase()}
               </td>
               <td>
-                <span className={coin.price_change_percentage_24h > 0?( 'text-success') :'text-danger'}>
-                {formatPercent(coin.price_change_percentage_24h)}
+                <span className={coin.price_change_percentage_24h > 0?( 'text-success') :'text-danger'} >
+                {formatPercent(coin.price_change_percentage_24h)} 
                 </span>
               </td>
-              <td>{formatDollar(coin.current_price, 20)}</td>
-              <td>{formatDollar(coin.market_cap, 12)}</td>
+              <td onMouseOver={hilight} onMouseOut={unhilight}>{formatDollar(coin.current_price, 20)}</td>
+              <td onMouseOver={hilight2} onMouseOut={unhilight} >{formatDollar(coin.market_cap, 12)}</td>
               </tr>
           ))}
         </tbody>
