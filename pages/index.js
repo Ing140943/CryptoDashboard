@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import CoinGecko from 'coingecko-api'
+
+
 const coinGeckoClient = new CoinGecko();
 
 function hilight(e){
@@ -9,14 +11,29 @@ function hilight(e){
 function hilight2(e){
   e.target.style.background = "honeydew"
 }
+function hilight3(e){
+  e.target.style.background = "oldlace"
+}
 
 function unhilight(e){
   e.target.style.background = "white"
 }
 
 export default function Home(props) {
-  const { data } = props.result
+  const Table = () => {
 
+    // .....
+
+    const itemsPerPage = 10;
+    const [page, setPage] = useState(1);
+    const displayData = useMemo(() => {
+        const start = (page - 1) * itemsPerPage;
+        return data.slice(start, start + itemsPerPage);
+    }, [data]);
+  };
+
+  const { data } = props.result
+  console.log(data)
   const formatPercent = number =>
   `${new Number(number).toFixed(2)}%`
 
@@ -38,12 +55,14 @@ export default function Home(props) {
         <link rel="stylesheet" href="styles/style.css"/>
       </Head>
       <h1>Crypto Dashboard</h1>
+      <button onClick={() => setPage(page + 1)}> Next Page</button>
       <table className='table'>
         <thead>
           <tr>
             <th className='symbol'>Symbol</th>
             <th>24H Change</th>
             <th>Price</th>
+            <th>All Time High</th>
             <th>Market Cap</th>
           </tr>
         </thead>
@@ -56,12 +75,13 @@ export default function Home(props) {
                 style={{width: 25, height: 25, marginRight:10}}/>
                 {coin.symbol.toUpperCase()}
               </td>
-              <td>
+              <td onMouseOver={hilight} onMouseOut={unhilight} >
                 <span className={coin.price_change_percentage_24h > 0?( 'text-success') :'text-danger'} >
                 {formatPercent(coin.price_change_percentage_24h)} 
                 </span>
               </td>
               <td onMouseOver={hilight} onMouseOut={unhilight}>{formatDollar(coin.current_price, 20)}</td>
+              <td onMouseOver={hilight3} onMouseOut={unhilight} >{formatDollar(coin.ath)}</td>
               <td onMouseOver={hilight2} onMouseOut={unhilight} >{formatDollar(coin.market_cap, 12)}</td>
               </tr>
           ))}
