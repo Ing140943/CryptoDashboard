@@ -1,6 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crypto Dashboard by Next.js
+
+## Intro
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) which is my first time to implement it. This web application was inspired by [CoinMarketCap](https://coinmarketcap.com/). This web application represnt 100 of cryptocurrency in the world. I represent the symbol, how it changes in 24 hours, the real time price, the all time high of that currency and their marketcap. I use api form [CoinGecko](https://www.coingecko.com) as my base information. Hope you enjoy with my first Next.js web application. 
+
+### URL
+
+[CRYPTO DASHBOARD](https://cyt-dashboard.herokuapp.com/)
 
 ## Getting Started
+
 
 First, run the development server:
 
@@ -20,15 +28,10 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Reference Resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.  
+- [Theme Color](https://colorhunt.co/)  - a theme color reference          
+- [Build a Crypto Currency Dashboard](https://youtu.be/klFeYge2G0I) - a tutorial for starting build the dashboard    
+- [Heroku](https://heroku.com/) - my host server to deply this web application
