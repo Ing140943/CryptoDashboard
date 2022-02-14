@@ -2,9 +2,6 @@
   padding: 0 2rem;
 }
 
-.symbol{
-  background-color: #0070f3;
-}
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -98,6 +95,25 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+}
+
+
+.header{
+  background-color:rgb(191, 255, 240);
+  color: rgb(247, 110, 17);
+  font-style: italic;
+  text-transform: uppercase;
+  text-shadow: #FFA1C9;
+  
+}
+
+.row{
+  background-color: rgb(240, 255, 194);
+  color: rgb(41, 3, 209);
+}
+
+.body{
+  font-family: monospace;
 }
 
 .card p {
